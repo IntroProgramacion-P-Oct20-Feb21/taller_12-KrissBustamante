@@ -11,11 +11,17 @@ package ejercicios;
  */
 public class Problema00 {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+     public static void main(String[] args) {
+        int[] datos = {10, 2, 4, 1};
+        System.out.printf("%d\n", misterio(datos, datos.length));
     }
-    
+
+    public static int misterio(int[] datos, int tamaño) {
+
+        if (tamaño == 1) {
+            return datos[0];
+        } else {
+            return datos[tamaño - 1] + misterio(datos, tamaño - 1);
+        }
+    }
 }
